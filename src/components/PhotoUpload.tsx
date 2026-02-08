@@ -37,7 +37,7 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({ photos, onAdd, onRemove }) =>
                 <Plus size={32} weight="bold" className="text-[var(--primary-main)]" />
                 <div className="text-center">
                     <span className="text-[14px] font-semibold text-[var(--text-primary)] block">DROP PHOTOS HERE OR CLICK</span>
-                    <span className="text-[12px] text-[var(--text-muted)] uppercase font-mono">3-10 Photos required (JPG, PNG)</span>
+                    <span className="text-[12px] text-[var(--text-muted)] uppercase font-mono">You can upload up to 10 photos (JPG, PNG)</span>
                 </div>
                 <input
                     type="file"
