@@ -54,9 +54,9 @@ Built with **React**, **TypeScript**, and **Tailwind CSS**, it strictly adheres 
 
 ---
 
-## 4. Design System Implementation
+## 4.- [DESIGN_SYSTEM.md](file:///Users/adityaraj0421/FMG-Vendor's%20Onboarding/DESIGN_SYSTEM.md) - Project specifics and tokens
 
-The application implements the **Genie UI Design System v5** through a combination of CSS variables and Tailwind utility classes.
+- [Genie_UI_Design_System_v5_Final.md](file:///Users/adityaraj0421/FMG-Vendor's%20Onboarding/Genie_UI_Design_System_v5_Final.md) - Master specification. of CSS variables and Tailwind utility classes.
 
 ### 4.1 Global Variables (`src/index.css`)
 

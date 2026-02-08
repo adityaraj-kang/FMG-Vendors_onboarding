@@ -47,7 +47,7 @@ const DocumentItem: React.FC<DocumentItemProps> = ({ label, required, fileName, 
                     size="dense"
                     onClick={() => fileInputRef.current?.click()}
                 >
-                    {fileName ? 'REPLACE' : 'UPLOAD PDF'}
+                    {fileName ? 'DELETE' : 'UPLOAD PDF'}
                 </Button>
             </div>
             <input
