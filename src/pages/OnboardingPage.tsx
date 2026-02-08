@@ -240,6 +240,7 @@ function App() {
                                                 options={US_STATES}
                                                 value={formData.state}
                                                 onChange={(val) => handleInputChange('state', val)}
+                                                searchable
                                             />
                                         </div>
 
