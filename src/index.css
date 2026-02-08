@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Backgrounds */
+  --bg-default: #050505;
+  --bg-surface: #121212;
+  --bg-input: #1A1A1A;
+  --bg-overlay: rgba(5, 5, 5, 0.85);
+  --border-subtle: #333333;
+  --border-strong: #555555;
+
+  /* Brand Colors */
+  --primary-main: #FF4D00;
+  --primary-hover: #FF6A2B;
+  --primary-pressed: #CC3D00;
+  --primary-dim: rgba(77, 23, 0, 0.15);
+  --primary-glow: #FF4D00;
+
+  /* Text Colors */
+  --text-primary: #EDEDED;
+  --text-body: #A1A1A1;
+  --text-muted: #666666;
+  --text-disabled: #333333;
+  --text-inverse: #111111;
+
+  /* Status */
+  --status-success: #00E096;
+  --status-error: #FF2D55;
+  --status-warning: #FFC043;
+  --status-info: #2E93FA;
+
+  /* Spacing */
+  --space-0-5: 4px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-headlines: 'Outfit', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Z-Index */
+  --z-floor: 0;
+  --z-elevated: 100;
+  --z-sticky: 500;
+  --z-overlay: 800;
+  --z-toast: 900;
+  --z-cursor: 999;
+
+  /* Timing */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-nav: 300ms;
+  --duration-breath: 2000ms;
+
+  /* Easing */
+  --ease-snap: cubic-bezier(0.2, 0, 0.38, 0.9);
+  --ease-linear: cubic-bezier(0, 0, 1, 1);
+  --ease-recoil: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --shadow-md: 0 4px 12px rgba(5, 5, 5, 0.6);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 8px var(--primary-glow);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Z-Index Extensions */
+  --z-dropdown: 800;
+}
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-default: #F4F5F7;
+  --bg-surface: #FFFFFF;
+  --bg-input: #F0F2F5;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --border-subtle: #E2E4E8;
+  --border-strong: #C4C8D0;
+
+  /* Text Colors */
+  --text-primary: #111111;
+  --text-body: #4A5568;
+  --text-muted: #64748B;
+  /* Adjusted for WCAG AA Compliance (was #94A3B8) */
+  --text-disabled: #CBD5E1;
+  --text-inverse: #FAFAFA;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(5, 5, 5, 0.05);
+  --shadow-md: 0 8px 16px rgba(5, 5, 5, 0.08);
+
+  /* Primary Dim override for light mode (10% opacity) */
+  --primary-dim: rgba(255, 77, 0, 0.10);
+  --primary-glow: rgba(255, 77, 0, 0.3);
+}
+
+[data-theme="light"] .logo-img {
+  filter: invert(1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 1, "zero" 1;
+}
+
+body {
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headlines);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+/* Custom Utilities based on Design System */
+.text-display-xl {
+  font-family: var(--font-headlines);
+  font-size: 80px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -3%;
+}
+
+.text-heading-1 {
+  font-family: var(--font-headlines);
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -1%;
+}
+
+.text-body-base {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text-mono-base {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text-heading-2 {
+  font-family: var(--font-headlines);
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+  font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+.text-heading-3 {
+  font-family: var(--font-headlines);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+  font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+.text-button {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.text-caption {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.radius-sm {
+  border-radius: var(--radius-sm);
+}
+
+.radius-md {
+  border-radius: var(--radius-md);
+}
+
+.radius-lg {
+  border-radius: var(--radius-lg);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Range Slider - Genie Design System */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-main);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--bg-surface);
+  box-shadow: var(--shadow-glow);
+  transition: transform 100ms var(--ease-snap);
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary-main);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--bg-surface);
+  box-shadow: var(--shadow-glow);
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, var(--primary-main) 0%, var(--primary-main) var(--slider-value, 50%), var(--bg-input) var(--slider-value, 50%), var(--bg-input) 100%);
+  border-radius: var(--radius-full);
+}
+
+.range-slider::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+}
+
+/* Custom Scrollbar - Dark Theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-default);
+  border-radius: var(--radius-full);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Thin scrollbar for horizontal scroll areas */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--primary-main);
+  border-radius: var(--radius-full);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
