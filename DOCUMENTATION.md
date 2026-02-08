@@ -148,6 +148,8 @@ npm run lint
 - **WCAG Compliance**: improved color contrast for `text-muted` and implemented automatic logo inversion for light mode.
 - **Mobile Optimization**: Added spacing to navigation buttons and adjusted text labels for better mobile readability.
 - **Text Updates**: Renamed "Compliance Documents" to "Documents" and "Configure Availability" to "Availability".
+- **Workflow Optimizations**: Made business photos non-mandatory for faster onboarding.
+- **Visual Polish**: Centered success screen content for better balance.
 
 ---
 

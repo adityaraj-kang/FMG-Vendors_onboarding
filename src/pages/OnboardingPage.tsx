@@ -387,7 +387,6 @@ function App() {
                                         </Button>
                                         <Button
                                             onClick={nextStep}
-                                            disabled={formData.photos.length < 3}
                                         >
                                             Documents
                                         </Button>
